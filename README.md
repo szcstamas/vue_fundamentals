@@ -1,24 +1,7 @@
-# real-world-vue
+# vue_fundamentals
 
-## Project setup
-```
-npm install
-```
+## Nothing to see here 😁
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+Just a basic SPA built in Vue including Vue CLI, Axios and dynamic routing.
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
