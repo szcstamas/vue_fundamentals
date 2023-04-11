@@ -5,3 +5,7 @@
 ```
 Just a basic SPA built in Vue including Vue CLI, Axios and dynamic routing.
 ```
+
+```
+Currently learning Vuex... 🤘
+```
