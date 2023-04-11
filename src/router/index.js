@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import EventList from "../views/EventList.vue";
+import EventDetails from "../views/EventDetails.vue";
 import AboutComp from "../views/AboutComp.vue";
 import ContactUs from "../views/ContactUs.vue";
 import ErrorPage from "../views/ErrorPage.vue";
@@ -9,6 +10,12 @@ const routes = [
     path: "/",
     name: "EventList",
     component: EventList,
+  },
+  {
+    path: "/event/:id",
+    name: "EventDetails",
+    props: true,
+    component: EventDetails,
   },
   {
     path: "/about",
