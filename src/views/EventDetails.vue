@@ -7,14 +7,22 @@
 </template>
 
 <script>
+import EventService from "@/services/EventService";
+
 export default {
   data() {
     return {
       event: null,
+      id: 123,
     };
   },
   created() {
     //fetch event and send local data
+    EventService.getEvent(this.id)
+      .then((response) => {
+        this.event = response.data;
+      })
+      .catch((error) => console.log(error));
   },
 };
 </script>
