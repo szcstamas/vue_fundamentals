@@ -1,5 +1,5 @@
 <template>
-  <div>Create an Event</div>
+  <h1>Create an Event</h1>
   <form>
     <label>Select a category</label>
     <select v-model="event.category">
@@ -34,7 +34,7 @@
     <h3>When is your event?</h3>
     <div class="field">
       <label>Date</label>
-      <datepicker v-model="event.date" placeholder="Select a date" />
+      <VueDatePicker v-model="event.date" placeholder="Select a date" />
     </div>
     <div class="field">
       <label>Select a time</label>
@@ -66,7 +66,7 @@ export default {
 <style lang="css" scoped>
 form {
   width: 600px;
-  margin: auto;
+  margin: 2rem auto 5rem auto;
   text-align: left;
 }
 form h3 {
@@ -74,6 +74,7 @@ form h3 {
 }
 form input,
 form select {
+  box-sizing: border-box;
   width: 100%;
   font-size: 16px;
   padding: 16px;
