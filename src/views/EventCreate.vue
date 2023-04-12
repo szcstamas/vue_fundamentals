@@ -54,10 +54,40 @@ export default {
   components: {
     VueDatePicker,
   },
+  data() {
+    return {
+      categories: this.$store.state.categories,
+      event: {},
+    };
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
+form {
+  width: 600px;
+  margin: auto;
+  text-align: left;
+}
+form h3 {
+  margin-top: 3rem;
+}
+form input,
+form select {
+  width: 100%;
+  font-size: 16px;
+  padding: 16px;
+}
+form label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+form option {
+  font-size: 16px;
+  font-family: inherit;
+  padding: 16px;
+}
 .field {
   margin-bottom: 20px;
 }
