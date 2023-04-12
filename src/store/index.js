@@ -1,3 +1,4 @@
+import EventService from "@/services/EventService";
 import { createStore } from "vuex";
 
 export default createStore({
@@ -42,7 +43,16 @@ export default createStore({
       return state.events.find((event) => event.id === id);
     },
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    ADD_EVENT(state, event) {
+      state.events.push(event);
+    },
+  },
+  actions: {
+    createEvent({ commit }, event) {
+      EventService.postEvent(event);
+      commit("ADD_EVENT", event);
+    },
+  },
   modules: {},
 });
