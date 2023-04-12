@@ -66,10 +66,8 @@ export default createStore({
         })
         .catch((error) => console.log(error));
     },
-    updateCount({ state, commit }, value) {
-      if (state.user) {
-        commit("INCREASE_NUMBER", value);
-      }
+    updateCount({ commit }, value) {
+      commit("INCREASE_NUMBER", value);
     },
   },
   modules: {},
