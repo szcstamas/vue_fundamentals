@@ -3,6 +3,7 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
+    count: 0,
     user: { id: "abc123", name: "Adam Jahr" },
     categories: [
       "sustainability",
@@ -19,12 +20,7 @@ export default createStore({
       { id: 3, text: "...", done: true },
       { id: 4, text: "...", done: false },
     ],
-    events: [
-      { id: 1, title: "...", organizer: "..." },
-      { id: 2, title: "...", organizer: "..." },
-      { id: 3, title: "...", organizer: "..." },
-      { id: 4, title: "...", organizer: "..." },
-    ],
+    events: [],
   },
   getters: {
     catLength: (state) => {
@@ -42,10 +38,19 @@ export default createStore({
     getEventById: (state) => (id) => {
       return state.events.find((event) => event.id === id);
     },
+    firstCategory: (state) => {
+      return state.categories[0];
+    },
   },
   mutations: {
     ADD_EVENT(state, event) {
       state.events.push(event);
+    },
+    SET_EVENTS(state, events) {
+      state.events = events;
+    },
+    INCREASE_NUMBER(state, value) {
+      state.count += value;
     },
   },
   actions: {
@@ -53,6 +58,18 @@ export default createStore({
       return EventService.postEvent(event).then(() => {
         commit("ADD_EVENT", event);
       });
+    },
+    fetchEvents({ commit }) {
+      EventService.getEvents()
+        .then((response) => {
+          commit("SET_EVENTS", response.data);
+        })
+        .catch((error) => console.log(error));
+    },
+    updateCount({ state, commit }, value) {
+      if (state.user) {
+        commit("INCREASE_NUMBER", value);
+      }
     },
   },
   modules: {},
