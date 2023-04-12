@@ -1,6 +1,7 @@
 <template>
   <div v-if="event">
     <h1>{{ event.title }}</h1>
+    <h5>Organized by {{ event.organizer ? event.organizer.name : "" }}</h5>
     <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
     <p>{{ event.description }}</p>
   </div>
