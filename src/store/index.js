@@ -21,6 +21,7 @@ export default createStore({
       { id: 4, text: "...", done: false },
     ],
     events: [],
+    event: {},
   },
   getters: {
     catLength: (state) => {
@@ -52,6 +53,9 @@ export default createStore({
     INCREASE_NUMBER(state, value) {
       state.count += value;
     },
+    SET_EVENT(state, event) {
+      state.event = event;
+    },
   },
   actions: {
     createEvent({ commit }, event) {
@@ -59,12 +63,26 @@ export default createStore({
         commit("ADD_EVENT", event);
       });
     },
-    fetchEvents({ commit }) {
-      EventService.getEvents()
+    fetchEvents({ commit }, { perPage, page }) {
+      EventService.getEvents(perPage, page)
         .then((response) => {
+          console.log(response.headers["x-total-count"]);
           commit("SET_EVENTS", response.data);
         })
         .catch((error) => console.log(error));
+    },
+    fetchEvent({ commit, getters }, id) {
+      let event = getters.getEventById(id);
+
+      if (event) {
+        commit("SET_EVENT", event);
+      } else {
+        EventService.getEvent(id)
+          .then((response) => {
+            commit("SET_EVENT", response.data);
+          })
+          .catch((error) => console.log(error));
+      }
     },
     updateCount({ commit }, value) {
       commit("INCREASE_NUMBER", value);

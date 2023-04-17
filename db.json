@@ -98,6 +98,168 @@
       "date": "2023-04-23T13:35:00.000Z",
       "time": "14:00",
       "attendees": []
+    },
+    {
+      "id": 1699132,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "2023-04-20T11:44:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 4715541,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Planting Trees",
+      "description": "We're going to plant trees",
+      "location": "In the forest",
+      "date": "2023-04-23T13:35:00.000Z",
+      "time": "14:00",
+      "attendees": []
+    },
+    {
+      "id": 1699132,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "2023-04-20T11:44:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 4715541,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Planting Trees",
+      "description": "We're going to plant trees",
+      "location": "In the forest",
+      "date": "2023-04-23T13:35:00.000Z",
+      "time": "14:00",
+      "attendees": []
+    },
+    {
+      "id": 1699132,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "2023-04-20T11:44:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 4715541,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Planting Trees",
+      "description": "We're going to plant trees",
+      "location": "In the forest",
+      "date": "2023-04-23T13:35:00.000Z",
+      "time": "14:00",
+      "attendees": []
+    },
+    {
+      "id": 1699132,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "2023-04-20T11:44:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    },
+    {
+      "id": 4715541,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "community",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Planting Trees",
+      "description": "We're going to plant trees",
+      "location": "In the forest",
+      "date": "2023-04-23T13:35:00.000Z",
+      "time": "14:00",
+      "attendees": []
+    },
+    {
+      "id": 1699132,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "",
+      "description": "",
+      "location": "",
+      "date": "2023-04-20T11:44:00.000Z",
+      "time": "18:00",
+      "attendees": []
     }
   ]
 }
