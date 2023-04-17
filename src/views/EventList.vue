@@ -1,5 +1,6 @@
 <template>
   <div class="events">
+    <h1>Events for {{ user.name }}</h1>
     <EventCard v-for="event in events" :key="event.id" :event="event" />
     <div class="flex">
       <template v-if="page != 1">
@@ -30,16 +31,23 @@ export default {
     EventCard,
   },
   created() {
-    this.$store.dispatch("fetchEvents", {
-      perPage: 3,
-      page: this.page,
-    });
+    this.$store
+      .dispatch("fetchEvents", {
+        perPage: 3,
+        page: this.page,
+      })
+      .catch((error) => {
+        this.$router.push({
+          name: "ErrorDisplay",
+          params: { error: error },
+        });
+      });
   },
   computed: {
     page() {
       return parseInt(this.$route.query.page) || 1;
     },
-    ...mapState(["events"]),
+    ...mapState(["events", "user"]),
   },
 };
 </script>

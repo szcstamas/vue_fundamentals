@@ -1,10 +1,17 @@
 import EventService from "@/services/EventService";
 import { createStore } from "vuex";
+import * as user from "@/store/modules/user.js";
 
 export default createStore({
+  // modules: {
+  //   user, // Include this module
+  // },
   state: {
     count: 0,
-    user: { id: "abc123", name: "Adam Jahr" },
+    user: {
+      id: "abc123",
+      name: "Adam", // I removed the last name Jahr here our title is on one line
+    },
     categories: [
       "sustainability",
       "nature",
@@ -59,17 +66,22 @@ export default createStore({
   },
   actions: {
     createEvent({ commit }, event) {
-      return EventService.postEvent(event).then(() => {
-        commit("ADD_EVENT", event);
-      });
+      return EventService.postEvent(event)
+        .then(() => {
+          commit("ADD_EVENT", event);
+        })
+        .catch((error) => {
+          throw error;
+        });
     },
     fetchEvents({ commit }, { perPage, page }) {
-      EventService.getEvents(perPage, page)
+      return EventService.getEvents(perPage, page)
         .then((response) => {
-          console.log(response.headers["x-total-count"]);
           commit("SET_EVENTS", response.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          throw error;
+        });
     },
     fetchEvent({ commit, getters }, id) {
       let event = getters.getEventById(id);
@@ -77,11 +89,13 @@ export default createStore({
       if (event) {
         commit("SET_EVENT", event);
       } else {
-        EventService.getEvent(id)
+        return EventService.getEvent(id)
           .then((response) => {
             commit("SET_EVENT", response.data);
           })
-          .catch((error) => console.log(error));
+          .catch((error) => {
+            throw error;
+          });
       }
     },
     updateCount({ commit }, value) {

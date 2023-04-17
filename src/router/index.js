@@ -5,6 +5,7 @@ import EventCreate from "../views/EventCreate.vue";
 import AboutComp from "../views/AboutComp.vue";
 import ContactUs from "../views/ContactUs.vue";
 import ErrorPage from "../views/ErrorPage.vue";
+import ErrorDisplay from "../views/ErrorDisplay.vue";
 
 const routes = [
   {
@@ -37,6 +38,12 @@ const routes = [
     path: "/:pathMatch(.*)*",
     name: "Error",
     component: ErrorPage,
+  },
+  {
+    path: "/error/:error",
+    name: "ErrorDisplay",
+    props: true,
+    component: ErrorDisplay,
   },
 ];
 
