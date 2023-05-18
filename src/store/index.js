@@ -1,17 +1,13 @@
 import EventService from "@/services/EventService";
 import { createStore } from "vuex";
-import * as user from "@/store/modules/user.js";
 
 export default createStore({
-  // modules: {
-  //   user, // Include this module
-  // },
   state: {
-    count: 0,
-    user: {
+    stateAdam: {
       id: "abc123",
-      name: "Adam", // I removed the last name Jahr here our title is on one line
+      name: "Adam"
     },
+    count: 0,
     categories: [
       "sustainability",
       "nature",

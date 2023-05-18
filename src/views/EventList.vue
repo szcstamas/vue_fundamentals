@@ -1,6 +1,6 @@
 <template>
   <div class="events">
-    <h1>Events for {{ user.name }}</h1>
+    <h1>Events for {{ stateAdam.name }}</h1>
     <EventCard v-for="event in events" :key="event.id" :event="event" />
     <div class="flex">
       <template v-if="page != 1">
@@ -47,7 +47,7 @@ export default {
     page() {
       return parseInt(this.$route.query.page) || 1;
     },
-    ...mapState(["events", "user"]),
+    ...mapState(["events", "stateAdam"]),
   },
 };
 </script>
