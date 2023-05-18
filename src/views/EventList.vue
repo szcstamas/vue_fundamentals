@@ -1,7 +1,15 @@
 <template>
   <div class="events">
     <h1>Events for {{ stateAdam.name }}</h1>
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
+    <router-link
+      v-for="event in events"
+      :key="event.id"
+      :event="event"
+      class="event-link"
+      :to="{ name: 'EventDetails', params: { id: event.id } }"
+    >
+      <EventCard />
+    </router-link>
     <div class="flex">
       <template v-if="page != 1">
         <router-link
